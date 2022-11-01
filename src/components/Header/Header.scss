@@ -12,8 +12,6 @@
         text-align: center;
     }
     &--bottom {
-        display: flex;
-        flex-wrap: nowrap;
         margin: 0.5rem 0;
     }
     &__logo {
@@ -21,21 +19,28 @@
         max-width: 120px;
     }
     &__form {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
     }
     &__search-bar {
+        flex:1;
         display: flex;
         justify-content: center;
         align-items: center;
         border: 1px solid $Mercury;
         border-radius: 4px;
+        background-color: $Alabaster;
         padding: 10px;
         height: 2.25rem;
-        min-width: 240px;
+        min-width: 220px;
         max-width: 100%;
         &-input{
             flex:1;
             border: none;
             margin-left: 1rem;
+            background-color: $Alabaster;
+
             &:focus {
                 outline: none;
             }

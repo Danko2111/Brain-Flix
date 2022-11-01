@@ -2,6 +2,8 @@ import logo from "../../assets/Logo/BrainFlix-logo.svg";
 import searchIcon from "../../assets/Icons/search.svg";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./Header.scss";
+import CtaButton from "../Button/CtaButton";
+import buttonIcon from "../../assets/Icons/upload.svg";
 
 const Header = () => {
   return (
@@ -23,12 +25,13 @@ const Header = () => {
               placeholder="Search"
             ></input>
           </div>
+          <img
+            className="site-header__avatar"
+            src={avatar}
+            alt="profile logo"
+          ></img>
+          <CtaButton text="Upload" source={buttonIcon} />
         </form>
-        <img
-          className="site-header__avatar"
-          src={avatar}
-          alt="profile logo"
-        ></img>
       </div>
     </div>
   );
