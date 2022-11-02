@@ -7,7 +7,7 @@ import buttonIcon from "../../assets/Icons/upload.svg";
 
 const Header = () => {
   return (
-    <div className="site-header">
+    <header className="site-header">
       <div className="site-header--top">
         <img className="site-header__logo" src={logo} alt="site logo"></img>
       </div>
@@ -33,7 +33,7 @@ const Header = () => {
           <CtaButton text="Upload" source={buttonIcon} />
         </form>
       </div>
-    </div>
+    </header>
   );
 };
 
