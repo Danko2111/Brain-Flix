@@ -9,7 +9,9 @@ const Comment = (props) => {
       <div className="comment--right">
         <div className="comment__top">
           <p className="comment__title">{props.name}</p>
-          <p className="comment__timestamp">{props.timestamp}</p>
+          <p className="comment__timestamp">
+            {props.dateParser(props.timestamp)}
+          </p>
         </div>
         <p className="comment__text">{props.text}</p>
       </div>

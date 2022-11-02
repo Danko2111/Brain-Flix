@@ -16,6 +16,7 @@ const CommentSection = (props) => {
           name={comment.name}
           text={comment.comment}
           timestamp={comment.timestamp}
+          dateParser={props.dateParser}
         />
       ))}
     </div>

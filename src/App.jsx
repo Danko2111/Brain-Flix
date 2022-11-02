@@ -4,6 +4,7 @@ import MainContent from "./components/MainContent/MainContent";
 import VideoDetails from "./assets/Data/video-details.json";
 import Videos from "./assets/Data/videos.json";
 import { useState } from "react";
+import { dateParser } from "./utilities/DateParser/DateParser";
 
 function App() {
   const [activeVideo, setActiveVideo] = useState(VideoDetails[0]);
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <Header />
       <MainContent
+        dateParser={dateParser}
         activeVideo={activeVideo}
         updateActiveVideo={updateActiveVideo}
         updateVideosArr={updateVideosArr}

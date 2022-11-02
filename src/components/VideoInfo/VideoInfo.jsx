@@ -21,7 +21,7 @@ const VideoInfo = (props) => {
           ></img>
           <p className="video-info__views-text">{views}</p>
         </div>
-        <p className="video-info__timestamp">{timestamp}</p>
+        <p className="video-info__timestamp">{props.dateParser(timestamp)}</p>
         <div className="video-info__likes">
           <img
             className="video-info__likes-icon"
