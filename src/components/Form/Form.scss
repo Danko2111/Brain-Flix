@@ -1,0 +1,50 @@
+@import "../../styles/Partials/variables";
+
+.comments {
+    &__form-wrapper {
+        display: flex;
+        align-items: flex-start;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $Mercury;
+        }
+        // left site ---------------
+        &__avatar {
+            width:  2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: -5px;
+            background-color: $Mercury;
+            margin-top: 1.75rem;
+            margin-right: 1rem;
+        }
+        // right site--------------------
+        &--right {
+            flex:1;
+        }
+        &__form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            &-label {
+                text-transform: uppercase;
+                color: $Silver;
+                font-weight: 700;        }
+            &-text {
+                border: 1px solid $Mercury;
+                background-color: $Alabaster;
+                border-radius: 4px;
+                width: 100%;
+                padding: .75rem;
+                margin-top: 0.5rem;
+                resize: none;
+                &:focus {
+                    outline: none;
+                }
+                &::placeholder {
+                    font-family: avenir;
+                }
+            }
+        }
+}

@@ -1,0 +1,36 @@
+@import "../../styles/Partials/variables";
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $Mercury;
+
+    &__avatar {
+        width:  2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: -5px;
+        background-color: $Mercury;
+        margin-right: 1rem;
+    }
+    &--right {
+        flex:1;
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        font-weight: 700;
+    }
+    &__timestamp {
+        color: $Silver;
+    }
+    &__text {
+        margin-top: 0.5rem;
+        color: $BrainFlix-Black;
+    }
+}

@@ -1,0 +1,36 @@
+@import "../../styles/Partials/variables";
+
+.video {
+    display: flex;
+    align-items: center;
+    color: $BrainFlix-Black;
+    margin: 1rem 0;
+
+    &--left {
+        flex:1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__image {
+        width: 100%;
+        height: 65px;
+        object-fit: cover;
+        border-radius: 4px;
+        
+    }
+    &--right {
+        flex:2;
+        height: 65px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__title {
+        font-weight: 700;
+    }
+    &__channel {
+       font-weight: 300;
+    }
+}

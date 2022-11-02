@@ -1,0 +1,11 @@
+@import "../../styles/Partials/variables";
+
+.videos {
+    margin: 1rem;
+
+    &__title {
+        color: $Silver;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
