@@ -1,8 +1,13 @@
 import "./Video.scss";
 
 const Video = (props) => {
+  const clickHandler = () => {
+    props.updateActiveVideo(props.id);
+    props.updateVideosArr(props.id);
+  };
+
   return (
-    <div className="video">
+    <div className="video" onClick={clickHandler}>
       <div className="video--left">
         <img
           className="video__image"

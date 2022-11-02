@@ -11,7 +11,11 @@ const MainContent = (props) => {
         <VideoPlayer imgSrc={props.activeVideo.image} />
         <VideoInfo activeVideo={props.activeVideo} />
         <CommentSection activeVideo={props.activeVideo} />
-        <Aside videos={props.videos} />
+        <Aside
+          videos={props.videos}
+          updateActiveVideo={props.updateActiveVideo}
+          updateVideosArr={props.updateVideosArr}
+        />
       </div>
     </section>
   );

@@ -8,7 +8,10 @@ const Aside = (props) => {
       <div className="vidoes__wrapper">
         {props.videos.map((video) => (
           <Video
+            updateActiveVideo={props.updateActiveVideo}
+            updateVideosArr={props.updateVideosArr}
             key={video.id}
+            id={video.id}
             image={video.image}
             title={video.title}
             channel={video.channel}
