@@ -3,7 +3,6 @@ import VideoInfo from "../VideoInfo/VideoInfo";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import Aside from "../Aside/Aside";
 import "./MainContent.scss";
-import { dateParser } from "../../utilities/DateParser/DateParser";
 
 const MainContent = (props) => {
   return (
@@ -14,11 +13,11 @@ const MainContent = (props) => {
           <div className="main__lower--left">
             <VideoInfo
               activeVideo={props.activeVideo}
-              dateParser={dateParser}
+              dateParser={props.dateParser}
             />
             <CommentSection
               activeVideo={props.activeVideo}
-              dateParser={dateParser}
+              dateParser={props.dateParser}
             />
           </div>
           <div className="main__lower--right">

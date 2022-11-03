@@ -54,7 +54,7 @@
         font-family: avenirBold;
         @include tablet {
             width: fit-content;
-            order:1;
+            order:1; 
         }
     }
     &__views {
