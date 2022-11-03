@@ -10,16 +10,25 @@ const MainContent = (props) => {
     <section className="main">
       <div className="main__wrapper">
         <VideoPlayer imgSrc={props.activeVideo.image} />
-        <VideoInfo activeVideo={props.activeVideo} dateParser={dateParser} />
-        <CommentSection
-          activeVideo={props.activeVideo}
-          dateParser={dateParser}
-        />
-        <Aside
-          videos={props.videos}
-          updateActiveVideo={props.updateActiveVideo}
-          updateVideosArr={props.updateVideosArr}
-        />
+        <div className="main__lower">
+          <div className="main__lower--left">
+            <VideoInfo
+              activeVideo={props.activeVideo}
+              dateParser={dateParser}
+            />
+            <CommentSection
+              activeVideo={props.activeVideo}
+              dateParser={dateParser}
+            />
+          </div>
+          <div className="main__lower--right">
+            <Aside
+              videos={props.videos}
+              updateActiveVideo={props.updateActiveVideo}
+              updateVideosArr={props.updateVideosArr}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,0 +1,18 @@
+@import "../../styles/Partials/variables";
+@import "../../styles/Partials/mixins";
+
+
+.main__lower {
+    @include desktop {
+        display: flex;
+        margin: 0 7rem;
+        &--left {
+            flex: 2;
+        }
+        &--right {
+            flex:1;
+            border-left: 1px solid $Mercury;
+        }
+    }
+    
+}

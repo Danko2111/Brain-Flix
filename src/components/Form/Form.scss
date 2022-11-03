@@ -7,6 +7,10 @@
         align-items: flex-start;
         padding-bottom: 1rem;
         border-bottom: 1px solid $Mercury;
+        @include desktop {
+            padding-right: 2rem;
+            border-bottom: none;
+        }
         }
         // left site ---------------
         &__avatar {

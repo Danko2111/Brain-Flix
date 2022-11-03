@@ -12,7 +12,11 @@ function App() {
     setActiveVideo(VideoDetails.find((video) => video.id === id));
   };
 
-  const [videosArr, setVideosArr] = useState(Videos);
+  let firstVidoesArr = Videos.filter(
+    (video) => video.id !== VideoDetails[0].id
+  );
+
+  const [videosArr, setVideosArr] = useState(firstVidoesArr);
   const updateVideosArr = (id) => {
     setVideosArr(Videos.filter((video) => video.id !== id));
   };

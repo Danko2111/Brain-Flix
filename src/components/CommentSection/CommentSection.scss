@@ -6,6 +6,9 @@
     @include tablet {
         margin: 1rem 3rem;
     }
+    @include desktop {
+        margin: 1rem 0;
+    }
     &__stats {
         font-weight: 700;
         margin-bottom: 2rem;

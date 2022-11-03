@@ -6,6 +6,10 @@
     @include tablet {
         margin: 1rem 3rem;
     }
+    @include desktop {
+        margin: 1rem 0;
+        padding-left: 2rem;
+    }
     &__title {
         color: $Silver;
         font-weight: 700;
