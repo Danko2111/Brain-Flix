@@ -1,4 +1,5 @@
 @import "./styles/Partials/fonts";
+@import "./styles/Partials/global";
 
 * {
     margin: 0;
@@ -6,6 +7,8 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+
+
 }
 
 body {

@@ -1,8 +1,11 @@
 @import "../../styles/Partials/variables";
+@import "../../styles/Partials/mixins";
 
 .comments {
     margin: 1rem;
-
+    @include tablet {
+        margin: 1rem 3rem;
+    }
     &__stats {
         font-weight: 700;
         margin-bottom: 2rem;

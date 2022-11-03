@@ -1,4 +1,5 @@
 @import "../../styles/Partials/variables";
+@import "../../styles/Partials/mixins";
 
 .site-header {
     display: flex;
@@ -6,10 +7,17 @@
     align-items: center;
     justify-content: center;
     margin: 0.5rem 1rem;
-
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0.5rem 3rem;
+    }
     &--top {
         width: 100%;
         text-align: center;
+        @include tablet {
+            width: fit-content;
+        }
     }
     &--bottom {
         margin: 0.5rem 0;
@@ -22,6 +30,8 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        @include tablet {
+        }
     }
     &__search-bar {
         flex:1;
@@ -35,6 +45,10 @@
         height: 2.25rem;
         min-width: 220px;
         max-width: 100%;
+        @include tablet {
+            order:1;
+        }
+        
         &-input{
             flex:1;
             border: none;
@@ -55,5 +69,8 @@
         object-position: -5px;
         background-color: $Mercury ;
         margin-left: 1rem;
+        @include tablet {
+            order:3;
+        }
     }
 }

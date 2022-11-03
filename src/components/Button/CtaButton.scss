@@ -1,6 +1,7 @@
 @import "../../styles/Partials/variables";
+@import "../../styles/Partials/mixins";
 
-.cta-button {
+.cta-button {   
     width: 100%;
     height: 2.5rem;
     border: none;
@@ -8,13 +9,20 @@
     background-color: $BrainFlix-Blue;
     color: $White;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-transform: uppercase;
     font-family: avenirBold;
     padding-top: 3px;
     margin-top: 1rem;
+
+    @include tablet {
+        width: 170px;
+        margin-top: 0;
+        margin-left: 1rem;
+        order:2;
+        &:hover {
+            background-color: $BrainFlix-DarkBlue;
+        }
+    }
 
     &__icon {
         position: absolute;

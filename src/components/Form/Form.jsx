@@ -11,15 +11,19 @@ const Form = () => {
       </div>
       <div className="comments--right">
         <form className="comments__form">
-          <div className="comments__input">
+          <div className="comments__form-input">
             <label className="comments__form-label">
               join the conversation
             </label>
             <textarea
-              className="comments__form-text"
+              className="comments__form-text1"
               rows="6"
               placeholder="Add a new comment"
             ></textarea>
+            <input
+              className="comments__form-text2"
+              placeholder="Add a new comment"
+            ></input>
           </div>
           <CtaButton text="Comment" source={buttonIcon} />
         </form>
