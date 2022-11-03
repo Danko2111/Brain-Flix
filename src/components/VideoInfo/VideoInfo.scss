@@ -51,6 +51,7 @@
         white-space: nowrap;
         width: 50%;
         color: $BrainFlix-DarkBlack;
+        font-family: avenirBold;
         @include tablet {
             width: fit-content;
             order:1;
