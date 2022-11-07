@@ -1,6 +1,7 @@
 import viewsIcon from "../../assets/Icons/views.svg";
 import likesIcon from "../../assets/Icons/likes.svg";
 import "./VideoInfo.scss";
+import { dateParser } from "../../utilities/DateParser/DateParser";
 
 const VideoInfo = (props) => {
   const { title, channel, views, timestamp, likes, description } =
@@ -21,7 +22,7 @@ const VideoInfo = (props) => {
           ></img>
           <p className="video-info__views-text">{views}</p>
         </div>
-        <p className="video-info__timestamp">{props.dateParser(timestamp)}</p>
+        <p className="video-info__timestamp">{dateParser(timestamp)}</p>
         <div className="video-info__likes">
           <img
             className="video-info__likes-icon"
