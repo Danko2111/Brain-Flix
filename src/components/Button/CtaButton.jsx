@@ -1,14 +1,19 @@
 import "./CtaButton.scss";
 
-const CtaButton = (props) => {
+const CtaButton = ({ text, source, clickHandler, classModifier }) => {
+  let currClassName = "cta-button";
+  if (classModifier !== "false") {
+    currClassName = classModifier;
+  }
+
   return (
-    <button className="cta-button" type="submit">
+    <button className={currClassName} type="submit" onClick={clickHandler}>
       <img
-        className="cta-button__icon"
-        src={props.source}
+        className={`${currClassName}__icon`}
+        src={source}
         alt="button icon"
       ></img>
-      {props.text}
+      {text}
     </button>
   );
 };

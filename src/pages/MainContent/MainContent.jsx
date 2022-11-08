@@ -1,7 +1,7 @@
-import CommentSection from "../CommentSection/CommentSection";
-import VideoInfo from "../VideoInfo/VideoInfo";
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import Aside from "../Aside/Aside";
+import CommentSection from "../../components/CommentSection/CommentSection";
+import VideoInfo from "../../components/VideoInfo/VideoInfo";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import Aside from "../../components/Aside/Aside";
 import "./MainContent.scss";
 
 const MainContent = (props) => {

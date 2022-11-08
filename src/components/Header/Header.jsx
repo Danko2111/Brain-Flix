@@ -4,8 +4,15 @@ import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./Header.scss";
 import CtaButton from "../Button/CtaButton";
 import buttonIcon from "../../assets/Icons/upload.svg";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  // using useNavigate hook to create a func that i can pass into the button component with props.
+  const nav = useNavigate();
+  const navigateToUpload = () => {
+    nav("/Upload");
+  };
+
   return (
     <header className="site-header">
       <div className="site-header--top">
@@ -30,7 +37,12 @@ const Header = () => {
             src={avatar}
             alt="profile logo"
           ></img>
-          <CtaButton text="Upload" source={buttonIcon} />
+          <CtaButton
+            text="Upload"
+            source={buttonIcon}
+            clickHandler={navigateToUpload}
+            classModifier="false"
+          />
         </form>
       </div>
     </header>

@@ -1,11 +1,13 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
-import MainContent from "./components/MainContent/MainContent";
+import MainContent from "./pages/MainContent/MainContent";
+import Upload from "./pages/Upload/Upload";
 import VideoDetails from "./assets/Data/video-details.json";
 import Videos from "./assets/Data/videos.json";
-import { useState } from "react";
 // imported a date parser func from utilities
 import { dateParser } from "./utilities/DateParser/DateParser";
+import { useState } from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 function App() {
   // declaring a state variable to keep track of the active video
@@ -28,16 +30,26 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
-      <MainContent
-        dateParser={dateParser}
-        activeVideo={activeVideo}
-        updateActiveVideo={updateActiveVideo}
-        updateVideosArr={updateVideosArr}
-        videos={videosArr}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <MainContent
+                dateParser={dateParser}
+                activeVideo={activeVideo}
+                updateActiveVideo={updateActiveVideo}
+                updateVideosArr={updateVideosArr}
+                videos={videosArr}
+              />
+            }
+          />
+          <Route path="/Upload" element={<Upload />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

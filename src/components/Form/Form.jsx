@@ -25,7 +25,12 @@ const Form = () => {
               placeholder="Add a new comment"
             ></input>
           </div>
-          <CtaButton text="Comment" source={buttonIcon} />
+          <CtaButton
+            text="Comment"
+            source={buttonIcon}
+            clickHandler={null}
+            classModifier="false"
+          />
         </form>
       </div>
     </div>
