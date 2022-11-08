@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 const Upload = () => {
   // using useNavigate hook to create a func that i can pass into the button component with props.
   const nav = useNavigate();
-  const navigateToHome = () => {
+  const navigateToHome = (e) => {
+    e.preventDefault();
     nav("/");
   };
 
@@ -28,6 +29,7 @@ const Upload = () => {
           className="upload__form-textarea"
           name="upload-desc"
           placeholder="Add a description to your video"
+          rows="5"
         ></textarea>
         <div className="upload__form-footer">
           <CtaButton

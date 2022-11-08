@@ -1,21 +1,70 @@
-.upload {
-    margin: 1rem;
+@import "../../styles/Partials/variables";
 
+.upload {
+    padding: 1.5rem 1rem 1rem;
+    border-top: 1px solid $Mercury;;
+    &__title {
+        margin-bottom: 1.5rem;
+    }
     &__form {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-
         &-thumbnail {
             width: 100%;
             object-fit: cover;
             border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        &-label {
+            text-transform: uppercase;
+            color: $Silver;
+            font-size: smaller;
+            margin-bottom: 0.25rem;
+        }
+        &-input {
+            border: 1px solid $Mercury;
+            background-color: $Alabaster;
+            border-radius: 4px;
+            width: 100%;
+            padding: .75rem;
+            margin-bottom: 1rem;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                font-family: avenir;
+                color: $BrainFlix-Black
+            }
+        }
+        &-textarea {
+            border: 1px solid $Mercury;
+            background-color: $Alabaster;
+            border-radius: 4px;
+            width: 100%;
+            padding: .75rem;
+            resize: none;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                font-family: avenir;
+                color: $BrainFlix-Black
+            }
         }
         &-footer {
             display: flex;
             flex-direction: column;
             width: 100%;
         }
-    }
-    
+    }    
+}
+.cta-button {
+    order:1;
+}
+
+.cancel-button {
+    order:2;
+    margin: 2rem auto 1rem;
+
 }

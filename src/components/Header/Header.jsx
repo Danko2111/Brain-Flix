@@ -9,7 +9,8 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   // using useNavigate hook to create a func that i can pass into the button component with props.
   const nav = useNavigate();
-  const navigateToUpload = () => {
+  const navigateToUpload = (e) => {
+    e.preventDefault();
     nav("/Upload");
   };
 
