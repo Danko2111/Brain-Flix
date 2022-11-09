@@ -28,7 +28,7 @@ const Comment = ({
           >
             <img
               src={delIcon}
-              rel="delete icon"
+              alt="delete icon"
               className="comment__delete-icon"
             ></img>
           </button>

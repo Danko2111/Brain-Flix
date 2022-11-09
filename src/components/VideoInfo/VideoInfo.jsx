@@ -3,14 +3,10 @@ import likesIcon from "../../assets/Icons/likes.svg";
 import "./VideoInfo.scss";
 import { dateParser } from "../../utilities/DateParser/DateParser";
 
-const VideoInfo = ({
-  title,
-  channel,
-  views,
-  timestamp,
-  likes,
-  description,
-}) => {
+const VideoInfo = (props) => {
+  const { title, channel, views, timestamp, likes, description } =
+    props.activeVideo;
+
   return (
     <div className="video-info">
       <div className="video-info__title">
