@@ -15,16 +15,20 @@ const MainContent = ({ dateParser }) => {
   const [videosArr, setVideosArr] = useState([]);
   // useEffect hook used to make an axios api call on page load and set the state var to the videos arr
 
+  // calling the getvideo array func on page load
   useEffect(() => {
     getVideoList();
   }, []);
 
+  // calling the video details func on url change
   useEffect(() => {
+    // only calling it if there is a non default url
     if (id) {
       getVideoDetails(id);
     }
   }, [id]);
 
+  // Func to make an axios get call for the video list array and set it as the state var, also setting a default video details state var
   const getVideoList = () => {
     axios
       .get(
@@ -38,7 +42,7 @@ const MainContent = ({ dateParser }) => {
       })
       .catch((err) => alert(err));
   };
-  // useEffect gook used to make an axios api call on page load and set the state var to the video where the url matches the video id
+  // Func to make an axios get call for the video details obj and set it as the state var using the url params as the id in the api call.
   const getVideoDetails = (id) => {
     axios
       .get(
@@ -50,6 +54,7 @@ const MainContent = ({ dateParser }) => {
       .catch((err) => alert(err));
   };
   return (
+    // terniary operator to only mount components if an active video obj is set to the state var
     <>
       {activeVideo ? (
         <section className="main">
