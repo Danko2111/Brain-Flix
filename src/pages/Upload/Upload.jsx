@@ -17,7 +17,11 @@ const Upload = () => {
       <h2 className="upload__title">Upload Video</h2>
       <form className="upload__form">
         <label className="upload__form-label">video Thumbnail</label>
-        <img className="upload__form-thumbnail" src={thumbnail}></img>
+        <img
+          className="upload__form-thumbnail"
+          src={thumbnail}
+          alt="a placeholder thumbnail"
+        ></img>
         <label className="upload__form-label">title your video</label>
         <input
           className="upload__form-input"

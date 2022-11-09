@@ -1,8 +1,8 @@
 import "./VideoPlayer.scss";
 
-const VideoPlayer = (props) => {
+const VideoPlayer = ({ imgSrc }) => {
   return (
-    <video className="video-player" controls poster={props.imgSrc}></video>
+    <video className="video-player" controls poster={imgSrc.image}></video>
   );
 };
 

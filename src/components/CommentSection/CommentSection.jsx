@@ -1,6 +1,7 @@
 import "./CommentSection.scss";
 import Form from "../Form/Form";
 import Comment from "../Comment/Comment";
+import { dateParser } from "../../utilities/DateParser/DateParser";
 
 const CommentSection = (props) => {
   const comments = props.activeVideo.comments;
@@ -16,7 +17,7 @@ const CommentSection = (props) => {
           name={comment.name}
           text={comment.comment}
           timestamp={comment.timestamp}
-          dateParser={props.dateParser}
+          dateParser={dateParser}
         />
       ))}
     </div>
