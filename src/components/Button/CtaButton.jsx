@@ -7,7 +7,13 @@ const CtaButton = ({ text, source, clickHandler, classModifier }) => {
   }
 
   return (
-    <button className={currClassName} type="submit">
+    <button
+      className={currClassName}
+      type="submit"
+      onClick={(e) => {
+        clickHandler(e);
+      }}
+    >
       <img
         className={`${currClassName}__icon`}
         src={source}

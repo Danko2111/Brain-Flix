@@ -3,7 +3,7 @@ import Form from "../Form/Form";
 import Comment from "../Comment/Comment";
 import { dateParser } from "../../utilities/DateParser/DateParser";
 
-const CommentSection = ({ activeVideo, postComment }) => {
+const CommentSection = ({ activeVideo, postComment, delComment }) => {
   const comments = activeVideo.comments;
   const numOfComments = comments.length;
 
@@ -16,10 +16,13 @@ const CommentSection = ({ activeVideo, postComment }) => {
         .map((comment) => (
           <Comment
             key={comment.id}
+            id={comment.id}
             name={comment.name}
             text={comment.comment}
             timestamp={comment.timestamp}
             dateParser={dateParser}
+            delComment={delComment}
+            activeVideo={activeVideo.id}
           />
         ))}
     </div>

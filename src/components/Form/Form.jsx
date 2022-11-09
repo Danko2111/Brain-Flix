@@ -14,8 +14,8 @@ const Form = ({ postComment, activeVideo }) => {
     const formInputSmall = e.target.commentLarge.value;
 
     if (!formInputSmall && !formInputLarge) {
-      alert("Please enter a comment before submitting");
       setFormErroClass("--error");
+      alert("Please enter a comment before submitting");
     } else if (formInputLarge) {
       postComment(activeVideo.id, formInputLarge);
       setFormErroClass("");

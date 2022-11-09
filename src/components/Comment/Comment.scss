@@ -39,4 +39,16 @@
         margin-top: 0.5rem;
         color: $BrainFlix-Black;
     }
+    &__delete-button {
+        margin-top: 1rem;
+        background-color: white;
+        border: none;
+        &:active {
+            transform: scale(0.90);
+        }
+    }
+    &__delete-icon {
+        width: 15px;
+        height: 15px;
+    }
 }

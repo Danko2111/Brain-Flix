@@ -1,6 +1,15 @@
+import delIcon from "../../assets/Icons/delete-button.svg";
 import "./Comment.scss";
 
-const Comment = (props) => {
+const Comment = ({
+  id,
+  name,
+  text,
+  timestamp,
+  dateParser,
+  delComment,
+  activeVideo,
+}) => {
   return (
     <div className="comment">
       <div className="comment--left">
@@ -8,12 +17,22 @@ const Comment = (props) => {
       </div>
       <div className="comment--right">
         <div className="comment__top">
-          <p className="comment__title">{props.name}</p>
-          <p className="comment__timestamp">
-            {props.dateParser(props.timestamp)}
-          </p>
+          <p className="comment__title">{name}</p>
+          <p className="comment__timestamp">{dateParser(timestamp)}</p>
         </div>
-        <p className="comment__text">{props.text}</p>
+        <p className="comment__text">{text}</p>
+        <div className="comment__bottom">
+          <button
+            className="comment__delete-button"
+            onClick={() => delComment(activeVideo, id)}
+          >
+            <img
+              src={delIcon}
+              rel="delete icon"
+              className="comment__delete-icon"
+            ></img>
+          </button>
+        </div>
       </div>
     </div>
   );

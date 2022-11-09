@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const MainContent = ({ dateParser }) => {
+const MainContent = () => {
   const { id } = useParams();
   // declaring a state variable to keep track of the active video
   const [activeVideo, setActiveVideo] = useState(null);
@@ -61,8 +61,19 @@ const MainContent = ({ dateParser }) => {
         `https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`,
         commentData
       )
-      .then((res) => {
+      .then(() => {
         getVideoDetails(id);
+      })
+      .catch((err) => alert(err));
+  };
+  // Func that makes an axios delete call and removes a comment from the api server
+  const delComment = (vidId, comId) => {
+    axios
+      .delete(
+        `https://project-2-api.herokuapp.com/videos/${vidId}/comments/${comId}?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`
+      )
+      .then(() => {
+        getVideoDetails(vidId);
       })
       .catch((err) => alert(err));
   };
@@ -80,6 +91,7 @@ const MainContent = ({ dateParser }) => {
                 <CommentSection
                   activeVideo={activeVideo}
                   postComment={postComment}
+                  delComment={delComment}
                 />
               </div>
               <div className="main__lower--right">
