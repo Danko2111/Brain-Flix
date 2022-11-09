@@ -53,6 +53,20 @@ const MainContent = ({ dateParser }) => {
       })
       .catch((err) => alert(err));
   };
+  // Func that makes an axios post call sending the comment form data to the api
+  const postComment = (id, content) => {
+    const commentData = { name: "Placeholder", comment: content };
+    axios
+      .post(
+        `https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`,
+        commentData
+      )
+      .then((res) => {
+        getVideoDetails(id);
+      })
+      .catch((err) => alert(err));
+  };
+
   return (
     // terniary operator to only mount components if an active video obj is set to the state var
     <>
@@ -63,7 +77,10 @@ const MainContent = ({ dateParser }) => {
             <div className="main__lower">
               <div className="main__lower--left">
                 <VideoInfo activeVideo={activeVideo} />
-                <CommentSection activeVideo={activeVideo} />
+                <CommentSection
+                  activeVideo={activeVideo}
+                  postComment={postComment}
+                />
               </div>
               <div className="main__lower--right">
                 <Aside videos={videosArr} activeVideo={activeVideo} />

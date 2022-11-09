@@ -12,6 +12,12 @@ const Upload = () => {
     nav("/");
   };
 
+  const uploadVideo = (e) => {
+    e.preventDefault();
+    alert("Your viddeo has been uploaded!");
+    nav("/");
+  };
+
   return (
     <div className="upload">
       <h2 className="upload__title">Upload Video</h2>
@@ -45,7 +51,7 @@ const Upload = () => {
           <CtaButton
             text="publish"
             source={uploadIcon}
-            clickHandler={null}
+            clickHandler={uploadVideo}
             classModifier="false"
           />
         </div>

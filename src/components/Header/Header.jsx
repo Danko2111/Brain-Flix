@@ -4,7 +4,7 @@ import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import "./Header.scss";
 import CtaButton from "../Button/CtaButton";
 import buttonIcon from "../../assets/Icons/upload.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Header = () => {
   // using useNavigate hook to create a func that i can pass into the button component with props.
@@ -17,7 +17,9 @@ const Header = () => {
   return (
     <header className="site-header">
       <div className="site-header--top">
-        <img className="site-header__logo" src={logo} alt="site logo"></img>
+        <Link to="/">
+          <img className="site-header__logo" src={logo} alt="site logo"></img>
+        </Link>
       </div>
       <div className="site-header--bottom">
         <form className="site-header__form">

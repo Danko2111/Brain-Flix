@@ -3,23 +3,25 @@ import Form from "../Form/Form";
 import Comment from "../Comment/Comment";
 import { dateParser } from "../../utilities/DateParser/DateParser";
 
-const CommentSection = (props) => {
-  const comments = props.activeVideo.comments;
+const CommentSection = ({ activeVideo, postComment }) => {
+  const comments = activeVideo.comments;
   const numOfComments = comments.length;
 
   return (
     <div className="comments">
       <p className="comments__stats">{numOfComments} Comments</p>
-      <Form />
-      {props.activeVideo.comments.map((comment) => (
-        <Comment
-          key={comment.id}
-          name={comment.name}
-          text={comment.comment}
-          timestamp={comment.timestamp}
-          dateParser={dateParser}
-        />
-      ))}
+      <Form postComment={postComment} activeVideo={activeVideo} />
+      {activeVideo.comments
+        .sort((itemA, itemB) => itemB.timestamp - itemA.timestamp)
+        .map((comment) => (
+          <Comment
+            key={comment.id}
+            name={comment.name}
+            text={comment.comment}
+            timestamp={comment.timestamp}
+            dateParser={dateParser}
+          />
+        ))}
     </div>
   );
 };
