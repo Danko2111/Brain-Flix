@@ -31,6 +31,7 @@
         align-items: center;
         flex-wrap: wrap;
         @include tablet {
+            gap: 1rem;
         }
     }
     &__search-bar {
@@ -47,6 +48,7 @@
         max-width: 100%;
         @include tablet {
             order:1;
+            height: 2.5rem;
         }
         
         &-input{
@@ -71,6 +73,7 @@
         margin-left: 1rem;
         @include tablet {
             order:3;
+            margin: 0;
         }
     }
 }

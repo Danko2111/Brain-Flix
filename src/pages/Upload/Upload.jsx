@@ -14,7 +14,7 @@ const Upload = () => {
 
   const uploadVideo = (e) => {
     e.preventDefault();
-    alert("Your viddeo has been uploaded!");
+    alert("Your video has been uploaded!");
     nav("/");
   };
 
@@ -22,25 +22,29 @@ const Upload = () => {
     <div className="upload">
       <h2 className="upload__title">Upload Video</h2>
       <form className="upload__form">
-        <label className="upload__form-label">video Thumbnail</label>
-        <img
-          className="upload__form-thumbnail"
-          src={thumbnail}
-          alt="a placeholder thumbnail"
-        ></img>
-        <label className="upload__form-label">title your video</label>
-        <input
-          className="upload__form-input"
-          name="upload-title"
-          placeholder="Add a title to your video"
-        ></input>
-        <label className="upload__form-label">add a video description</label>
-        <textarea
-          className="upload__form-textarea"
-          name="upload-desc"
-          placeholder="Add a description to your video"
-          rows="5"
-        ></textarea>
+        <div className="upload__form-top">
+          <label className="upload__form-label">video Thumbnail</label>
+          <img
+            className="upload__form-thumbnail"
+            src={thumbnail}
+            alt="a placeholder thumbnail"
+          ></img>
+        </div>
+        <div className="upload__form-inputarea">
+          <label className="upload__form-label">title your video</label>
+          <input
+            className="upload__form-input"
+            name="upload-title"
+            placeholder="Add a title to your video"
+          ></input>
+          <label className="upload__form-label">add a video description</label>
+          <textarea
+            className="upload__form-textarea"
+            name="upload-desc"
+            placeholder="Add a description to your video"
+            rows="5"
+          ></textarea>
+        </div>
         <div className="upload__form-footer">
           <CtaButton
             text="cancel"
