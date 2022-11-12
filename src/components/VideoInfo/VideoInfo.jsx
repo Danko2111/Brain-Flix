@@ -9,11 +9,11 @@ const VideoInfo = (props) => {
 
   return (
     <div className="video-info">
-      <div className="video-info__title">
-        <h2>{title}</h2>
+      <div className={`video-info__title ${props.colorMode}`}>
+        <h2 className={props.colorMode}>{title}</h2>
       </div>
       <div className="video-info__stats">
-        <p className="video-info__channel">By {channel}</p>
+        <p className={`video-info__channel ${props.colorMode}`}>By {channel}</p>
         <div className="video-info__views">
           <img
             className="video-info__views-icon"

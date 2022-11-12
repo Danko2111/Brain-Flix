@@ -9,6 +9,7 @@ const Comment = ({
   dateParser,
   delComment,
   activeVideo,
+  colorMode,
 }) => {
   return (
     <div className="comment">
@@ -20,7 +21,7 @@ const Comment = ({
           <p className="comment__title">{name}</p>
           <p className="comment__timestamp">{dateParser(timestamp)}</p>
         </div>
-        <p className="comment__text">{text}</p>
+        <p className={`comment__text${[colorMode]}`}>{text}</p>
         <div className="comment__bottom">
           <button
             className="comment__delete-button"

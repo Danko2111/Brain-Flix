@@ -1,6 +1,12 @@
 import "./CtaButton.scss";
 
-const CtaButton = ({ text, source, clickHandler, classModifier }) => {
+const CtaButton = ({
+  text,
+  source,
+  clickHandler,
+  classModifier,
+  colorMode,
+}) => {
   let currClassName = "cta-button";
   if (classModifier !== "false") {
     currClassName = classModifier;
@@ -8,7 +14,7 @@ const CtaButton = ({ text, source, clickHandler, classModifier }) => {
 
   return (
     <button
-      className={currClassName}
+      className={`${currClassName} ${colorMode}`}
       type="submit"
       onClick={(e) => {
         clickHandler(e);

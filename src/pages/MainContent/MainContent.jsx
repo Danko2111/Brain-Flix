@@ -7,16 +7,16 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const MainContent = () => {
+const MainContent = ({ colorMode }) => {
   const { id } = useParams();
   // declaring a state variable to keep track of the active video
   const [activeVideo, setActiveVideo] = useState(null);
   // declaring a state variable to keep track of the vidoes array
   const [videosArr, setVideosArr] = useState([]);
-  // useEffect hook used to make an axios api call on page load and set the state var to the videos arr
 
-  // calling the getvideo array func on page load
+  // useEffect hook used to make an axios api call on page load and set the state var to the videos arr
   useEffect(() => {
+    // calling the getvideo array func on page load
     getVideoList();
   }, []);
 
@@ -87,15 +87,20 @@ const MainContent = () => {
             <VideoPlayer imgSrc={activeVideo} />
             <div className="main__lower">
               <div className="main__lower--left">
-                <VideoInfo activeVideo={activeVideo} />
+                <VideoInfo activeVideo={activeVideo} colorMode={colorMode} />
                 <CommentSection
                   activeVideo={activeVideo}
                   postComment={postComment}
                   delComment={delComment}
+                  colorMode={colorMode}
                 />
               </div>
               <div className="main__lower--right">
-                <Aside videos={videosArr} activeVideo={activeVideo} />
+                <Aside
+                  videos={videosArr}
+                  activeVideo={activeVideo}
+                  colorMode={colorMode}
+                />
               </div>
             </div>
           </div>

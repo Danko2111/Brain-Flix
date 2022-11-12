@@ -6,11 +6,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0.5rem 1rem;
+    margin: 0;
     @include tablet {
         flex-direction: row;
         justify-content: space-between;
-        margin: 0.5rem 3rem;
+        margin: 0 3rem;
     }
     &--top {
         width: 100%;
@@ -21,7 +21,44 @@
     }
     &--bottom {
         margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
+    &__toggle-mode {
+        background-color: white;
+        border-radius: 50px;
+        border: 1px solid $Mercury;
+        width: 50px;
+        height: 25px;
+        padding: 0 3px;
+        position: relative;
+        &dark {
+            background-color: $BrainFlix-Black;
+            border-radius: 50px;
+            border: 1px solid $Silver;
+            width: 50px;
+            height: 25px;
+            padding: 0 3px;
+            position: relative;
+        }
+        &--inner {
+            width: 18px;
+            height: 18px;
+            background-color: $BrainFlix-Black;
+            border-radius: 50px;
+            transition: 0.15s linear;
+            &dark{
+                width: 18px;
+                height: 18px;
+                background-color:$Alabaster;
+                border-radius: 50px;   
+                transform:translateX(24px);
+                transition: 0.15s linear;
+            }
+        }
+    }
+
     &__logo {
         max-height: 25px;
         max-width: 120px;
@@ -76,4 +113,8 @@
             margin: 0;
         }
     }
+}
+
+.dark {
+    background-color: $BrainFlix-Black;
 }

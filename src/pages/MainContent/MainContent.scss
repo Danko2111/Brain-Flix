@@ -16,3 +16,9 @@
     }
     
 }
+.main {
+    padding-bottom: 0.5rem;
+    @include desktop {
+        padding: 0;
+    }
+}

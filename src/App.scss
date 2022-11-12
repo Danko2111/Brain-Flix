@@ -1,5 +1,6 @@
 @import "./styles/Partials/fonts";
 @import "./styles/Partials/global";
+@import "./styles/Partials/variables";
 
 * {
     margin: 0;
@@ -7,12 +8,22 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-
-
 }
 
-body {
+html {
     height: 100%;
+    padding: 0;
+    margin:0;
+}
+
+.App {
+    min-height: 100vh;
     width: 100%;
     font-family: avenir;
+}
+
+
+.dark {
+    background-color: $BrainFlix-Black;
+    color: $Alabaster;
 }

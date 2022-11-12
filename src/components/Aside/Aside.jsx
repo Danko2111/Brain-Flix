@@ -1,7 +1,7 @@
 import "./Aside.scss";
 import Video from "../Video/Video";
 
-const Aside = ({ videos, activeVideo }) => {
+const Aside = ({ videos, activeVideo, colorMode }) => {
   return (
     <div className="videos">
       <p className="videos__title">next videos</p>
@@ -16,6 +16,7 @@ const Aside = ({ videos, activeVideo }) => {
                 image={video.image}
                 title={video.title}
                 channel={video.channel}
+                colorMode={colorMode}
               />
             );
           })}

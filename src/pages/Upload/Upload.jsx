@@ -4,7 +4,7 @@ import CtaButton from "../../components/Button/CtaButton";
 import uploadIcon from "../../assets/Icons/publish.svg";
 import { useNavigate } from "react-router-dom";
 
-const Upload = () => {
+const Upload = ({ colorMode }) => {
   // using useNavigate hook to create a func that i can pass into the button component with props.
   const nav = useNavigate();
   const navigateToHome = (e) => {
@@ -51,6 +51,7 @@ const Upload = () => {
             source={null}
             clickHandler={navigateToHome}
             classModifier="cancel-button"
+            colorMode={colorMode}
           />
           <CtaButton
             text="publish"

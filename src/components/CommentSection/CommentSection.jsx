@@ -3,7 +3,12 @@ import Form from "../Form/Form";
 import Comment from "../Comment/Comment";
 import { dateParser } from "../../utilities/DateParser/DateParser";
 
-const CommentSection = ({ activeVideo, postComment, delComment }) => {
+const CommentSection = ({
+  activeVideo,
+  postComment,
+  delComment,
+  colorMode,
+}) => {
   const comments = activeVideo.comments;
   const numOfComments = comments.length;
 
@@ -23,6 +28,7 @@ const CommentSection = ({ activeVideo, postComment, delComment }) => {
             dateParser={dateParser}
             delComment={delComment}
             activeVideo={activeVideo.id}
+            colorMode={colorMode}
           />
         ))}
     </div>
