@@ -10,6 +10,8 @@ function App() {
   // declaring a state variable to keep track of the light/dark mode toggle state
   const [colorMode, setColorMode] = useState(localStorage.getItem("mode"));
 
+  localStorage.setItem("mode", "");
+
   const toggleColorMode = () => {
     if (colorMode === "") {
       setColorMode("dark");
