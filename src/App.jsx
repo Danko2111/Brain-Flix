@@ -8,7 +8,9 @@ import { useState } from "react";
 
 function App() {
   // declaring a state variable to keep track of the light/dark mode toggle state
-  const [colorMode, setColorMode] = useState(localStorage.getItem("mode"));
+  const [colorMode, setColorMode] = useState(
+    localStorage.getItem("mode") ? localStorage.getItem("mode") : ""
+  );
 
   // Func that updates the state var and also adds the info to local storage
   const toggleColorMode = () => {
