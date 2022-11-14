@@ -5,7 +5,7 @@ import uploadIcon from "../../assets/Icons/publish.svg";
 import { useNavigate } from "react-router-dom";
 
 const Upload = ({ colorMode }) => {
-  // using useNavigate hook to create a func that i can pass into the button component with props.
+  // useNavigate hook that can be passed into the button component with props.
   const nav = useNavigate();
   const navigateToHome = (e) => {
     e.preventDefault();

@@ -1,18 +1,18 @@
 import CtaButton from "../Button/CtaButton";
 import buttonIcon from "../../assets/Icons/add_comment.svg";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
-import "./Form.scss";
+import "./CommentsForm.scss";
 import { useState } from "react";
 
-const Form = ({ postComment, activeVideo }) => {
-  // form submission
+const CommentsForm = ({ postComment, activeVideo }) => {
+  // form error catching state var used for className toggle
   const [formErrClass, setFormErroClass] = useState("");
-
+  // form submit func that reads the form values into vars
   const formSubmit = (e) => {
     e.preventDefault();
     const formInputLarge = e.target.commentSmall.value;
     const formInputSmall = e.target.commentLarge.value;
-
+    // if either of the inputs are empty throw an error and set state var to an error string // else set the state var to blank
     if (!formInputSmall && !formInputLarge) {
       setFormErroClass("--error");
       alert("Please enter a comment before submitting");
@@ -50,16 +50,11 @@ const Form = ({ postComment, activeVideo }) => {
               name="commentSmall"
             ></input>
           </div>
-          <CtaButton
-            text="Comment"
-            source={buttonIcon}
-            clickHandler={null}
-            classModifier="false"
-          />
+          <CtaButton text="Comment" source={buttonIcon} classModifier="false" />
         </form>
       </div>
     </div>
   );
 };
 
-export default Form;
+export default CommentsForm;

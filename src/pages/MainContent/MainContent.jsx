@@ -22,7 +22,7 @@ const MainContent = ({ colorMode }) => {
 
   // calling the video details func on url change
   useEffect(() => {
-    // only calling it if there is a non default url
+    // only calling it if there is a non default url becuase our initial onload useEffect sets the default video details
     if (id) {
       getVideoDetails(id);
     }
@@ -42,7 +42,7 @@ const MainContent = ({ colorMode }) => {
       })
       .catch((err) => alert(err));
   };
-  // Func to make an axios get call for the video details obj and set it as the state var using the url params as the id in the api call.
+  // Func to make an axios get call for the video details obj and set it as the state var // using the url params as the id in the api call.
   const getVideoDetails = (id) => {
     axios
       .get(
@@ -53,7 +53,7 @@ const MainContent = ({ colorMode }) => {
       })
       .catch((err) => alert(err));
   };
-  // Func that makes an axios post call sending the comment form data to the api
+  // Func that makes an axios post sending the comment form data to the api
   const postComment = (id, content) => {
     const commentData = { name: "Placeholder", comment: content };
     axios
@@ -79,7 +79,7 @@ const MainContent = ({ colorMode }) => {
   };
 
   return (
-    // terniary operator to only mount components if an active video obj is set to the state var
+    // terniary operator to only mount components once an active video obj is set to the state var
     <>
       {activeVideo ? (
         <section className="main">

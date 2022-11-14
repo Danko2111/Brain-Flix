@@ -7,6 +7,7 @@ const CtaButton = ({
   classModifier,
   colorMode,
 }) => {
+  // creating vars to house the default className or inherit the className of the passed down classModifier prop
   let currClassName = "cta-button";
   if (classModifier !== "false") {
     currClassName = classModifier;

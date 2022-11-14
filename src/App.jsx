@@ -1,5 +1,5 @@
 import "./App.scss";
-import Header from "./components/Header/Header";
+import PageHeader from "./components/PageHeader/PageHeader";
 import MainContent from "./pages/MainContent/MainContent";
 import Upload from "./pages/Upload/Upload";
 // imported a date parser func from utilities
@@ -7,10 +7,10 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  localStorage.setItem("mode", "");
   // declaring a state variable to keep track of the light/dark mode toggle state
   const [colorMode, setColorMode] = useState(localStorage.getItem("mode"));
 
+  // Func that updates the state var and also adds the info to local storage
   const toggleColorMode = () => {
     if (colorMode === "") {
       setColorMode("dark");
@@ -24,7 +24,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className={`App ${colorMode}`}>
-        <Header colorMode={colorMode} toggleColorMode={toggleColorMode} />
+        <PageHeader colorMode={colorMode} toggleColorMode={toggleColorMode} />
         <Routes>
           <Route path="/" element={<MainContent colorMode={colorMode} />} />
           <Route path="/:id" element={<MainContent colorMode={colorMode} />} />

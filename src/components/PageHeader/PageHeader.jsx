@@ -1,13 +1,12 @@
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
 import searchIcon from "../../assets/Icons/search.svg";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
-import "./Header.scss";
+import "./PageHeader.scss";
 import CtaButton from "../Button/CtaButton";
 import buttonIcon from "../../assets/Icons/upload.svg";
 import { useNavigate, Link } from "react-router-dom";
-import darkIcon from "../../assets/Icons/dark.png";
 
-const Header = ({ colorMode, toggleColorMode }) => {
+const PageHeader = ({ colorMode, toggleColorMode }) => {
   // using useNavigate hook to create a func that i can pass into the button component with props.
   const nav = useNavigate();
   const navigateToUpload = (e) => {
@@ -61,4 +60,4 @@ const Header = ({ colorMode, toggleColorMode }) => {
   );
 };
 
-export default Header;
+export default PageHeader;

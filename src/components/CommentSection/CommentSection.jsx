@@ -1,5 +1,5 @@
 import "./CommentSection.scss";
-import Form from "../Form/Form";
+import CommentsForm from "../CommentsForm/CommentsForm";
 import Comment from "../Comment/Comment";
 import { dateParser } from "../../utilities/DateParser/DateParser";
 
@@ -9,13 +9,14 @@ const CommentSection = ({
   delComment,
   colorMode,
 }) => {
+  // declaring variables to contain the comments length
   const comments = activeVideo.comments;
   const numOfComments = comments.length;
 
   return (
     <div className="comments">
       <p className="comments__stats">{numOfComments} Comments</p>
-      <Form postComment={postComment} activeVideo={activeVideo} />
+      <CommentsForm postComment={postComment} activeVideo={activeVideo} />
       {activeVideo.comments
         .sort((itemA, itemB) => itemB.timestamp - itemA.timestamp)
         .map((comment) => (
