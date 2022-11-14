@@ -3,17 +3,16 @@ import likesIcon from "../../assets/Icons/likes.svg";
 import "./VideoInfo.scss";
 import { dateParser } from "../../utilities/DateParser/DateParser";
 
-const VideoInfo = (props) => {
-  const { title, channel, views, timestamp, likes, description } =
-    props.activeVideo;
+const VideoInfo = ({ colorMode, activeVideo }) => {
+  const { title, channel, views, timestamp, likes, description } = activeVideo;
 
   return (
     <div className="video-info">
-      <div className={`video-info__title ${props.colorMode}`}>
-        <h2 className={props.colorMode}>{title}</h2>
+      <div className={`video-info__title ${colorMode}`}>
+        <h2 className={colorMode}>{title}</h2>
       </div>
       <div className="video-info__stats">
-        <p className={`video-info__channel ${props.colorMode}`}>By {channel}</p>
+        <p className={`video-info__channel ${colorMode}`}>By {channel}</p>
         <div className="video-info__views">
           <img
             className="video-info__views-icon"

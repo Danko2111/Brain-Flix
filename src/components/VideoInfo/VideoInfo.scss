@@ -50,6 +50,7 @@
         font-weight: 700;
         white-space: nowrap;
         width: 50%;
+        color: $BrainFlix-DarkBlack;
         font-family: avenirBold;
         @include tablet {
             width: fit-content;
@@ -93,4 +94,8 @@
     &__desc {
         padding: 1rem 0;
     }
+}
+
+.dark {
+    color: white;
 }

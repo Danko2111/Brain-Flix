@@ -9,13 +9,9 @@ const CommentSection = ({
   delComment,
   colorMode,
 }) => {
-  // declaring variables to contain the comments length
-  const comments = activeVideo.comments;
-  const numOfComments = comments.length;
-
   return (
     <div className="comments">
-      <p className="comments__stats">{numOfComments} Comments</p>
+      <p className="comments__stats">{activeVideo.comments.length} Comments</p>
       <CommentsForm postComment={postComment} activeVideo={activeVideo} />
       {activeVideo.comments
         .sort((itemA, itemB) => itemB.timestamp - itemA.timestamp)
