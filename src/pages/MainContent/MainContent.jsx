@@ -25,6 +25,8 @@ const MainContent = ({ colorMode }) => {
     // only calling it if there is a non default url becuase our initial onload useEffect sets the default video details
     if (id) {
       getVideoDetails(id);
+    } else {
+      getVideoDetails("84e96018-4022-434e-80bf-000ce4cd12b8");
     }
   }, [id]);
 
