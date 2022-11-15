@@ -3,8 +3,19 @@ import thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import CtaButton from "../../components/Button/CtaButton";
 import uploadIcon from "../../assets/Icons/publish.svg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Upload = ({ colorMode }) => {
+  // post video func that creates an obj and posts it to the api server
+  const postVideo = (title, description) => {
+    const videoData = { title: title, description: description };
+    axios
+      .post(`http://localhost:5000/videos`, videoData)
+      .then((res) => {
+        console.log("completed");
+      })
+      .catch((err) => alert(err));
+  };
   // useNavigate hook that can be passed into the button component with props.
   const nav = useNavigate();
   const navigateToHome = (e) => {
@@ -14,14 +25,15 @@ const Upload = ({ colorMode }) => {
 
   const uploadVideo = (e) => {
     e.preventDefault();
-    alert("Your video has been uploaded!");
+    postVideo(e.target.uploadTitle.value, e.target.uploadDesc.value);
+    alert("Your video has been uploaded");
     nav("/");
   };
 
   return (
     <div className="upload">
       <h2 className="upload__title">Upload Video</h2>
-      <form className="upload__form">
+      <form className="upload__form" onSubmit={uploadVideo}>
         <div className="upload__form-top">
           <label className="upload__form-label">video Thumbnail</label>
           <img
@@ -34,13 +46,13 @@ const Upload = ({ colorMode }) => {
           <label className="upload__form-label">title your video</label>
           <input
             className="upload__form-input"
-            name="upload-title"
+            name="uploadTitle"
             placeholder="Add a title to your video"
           ></input>
           <label className="upload__form-label">add a video description</label>
           <textarea
             className="upload__form-textarea"
-            name="upload-desc"
+            name="uploadDesc"
             placeholder="Add a description to your video"
             rows="5"
           ></textarea>
@@ -55,8 +67,9 @@ const Upload = ({ colorMode }) => {
           />
           <CtaButton
             text="publish"
+            type="submit"
             source={uploadIcon}
-            clickHandler={uploadVideo}
+            clickHandler={null}
             classModifier="false"
           />
         </div>

@@ -32,7 +32,8 @@ const MainContent = ({ colorMode }) => {
   const getVideoList = () => {
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`
+        // `https://project-2-api.herokuapp.com/videos?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`
+        "http://localhost:5000/videos"
       )
       .then((res) => {
         setVideosArr(res.data);
@@ -46,7 +47,8 @@ const MainContent = ({ colorMode }) => {
   const getVideoDetails = (id) => {
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos/${id}?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`
+        // `https://project-2-api.herokuapp.com/videos/${id}?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`
+        `http://localhost:5000/videos/${id}`
       )
       .then((res) => {
         setActiveVideo(res.data);

@@ -11,7 +11,6 @@ function App() {
   const [colorMode, setColorMode] = useState(
     localStorage.getItem("mode") ? localStorage.getItem("mode") : ""
   );
-
   // Func that updates the state var and also adds the info to local storage
   const toggleColorMode = () => {
     if (colorMode === "") {
