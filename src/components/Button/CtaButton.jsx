@@ -18,7 +18,9 @@ const CtaButton = ({
       className={`${currClassName} ${colorMode}`}
       type="submit"
       onClick={(e) => {
-        clickHandler(e);
+        if (clickHandler) {
+          clickHandler(e);
+        }
       }}
     >
       <img

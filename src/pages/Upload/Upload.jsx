@@ -69,7 +69,6 @@ const Upload = ({ colorMode }) => {
             text="publish"
             type="submit"
             source={uploadIcon}
-            clickHandler={null}
             classModifier="false"
           />
         </div>

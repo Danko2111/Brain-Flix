@@ -61,11 +61,8 @@ const MainContent = ({ colorMode }) => {
   const postComment = (id, content) => {
     const commentData = { name: "Placeholder", comment: content };
     axios
-      .post(
-        `https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`,
-        commentData
-      )
-      .then(() => {
+      .post(`http://localhost:5000/videos/${id}/comments`, commentData)
+      .then((response) => {
         getVideoDetails(id);
       })
       .catch((err) => alert(err));
