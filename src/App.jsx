@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent colorMode={colorMode} />} />
           <Route path="/:id" element={<MainContent colorMode={colorMode} />} />
-          <Route path="/Upload" element={<Upload colorMode={colorMode} />} />
+          <Route path="/upload" element={<Upload colorMode={colorMode} />} />
         </Routes>
       </div>
     </BrowserRouter>

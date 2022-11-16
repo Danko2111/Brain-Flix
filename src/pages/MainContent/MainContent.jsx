@@ -18,6 +18,7 @@ const MainContent = ({ colorMode }) => {
   useEffect(() => {
     // calling the getvideo array func on page load
     getVideoList();
+    window.scrollTo(0, 0);
   }, []);
 
   // calling the video details func on url change
@@ -28,6 +29,9 @@ const MainContent = ({ colorMode }) => {
     } else {
       getVideoDetails("84e96018-4022-434e-80bf-000ce4cd12b8");
     }
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 250);
   }, [id]);
 
   // Func to make an axios get call for the video list array and set it as the state var, also setting a default video details state var
@@ -62,7 +66,7 @@ const MainContent = ({ colorMode }) => {
     const commentData = { name: "Placeholder", comment: content };
     axios
       .post(`http://localhost:5000/videos/${id}/comments`, commentData)
-      .then((response) => {
+      .then((res) => {
         getVideoDetails(id);
       })
       .catch((err) => alert(err));
@@ -70,9 +74,7 @@ const MainContent = ({ colorMode }) => {
   // Func that makes an axios delete call and removes a comment from the api server
   const delComment = (vidId, comId) => {
     axios
-      .delete(
-        `https://project-2-api.herokuapp.com/videos/${vidId}/comments/${comId}?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`
-      )
+      .delete(`http://localhost:5000/videos/${vidId}/comments/${comId}`)
       .then(() => {
         getVideoDetails(vidId);
       })

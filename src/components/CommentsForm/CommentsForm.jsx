@@ -6,23 +6,21 @@ import { useState } from "react";
 
 const CommentsForm = ({ postComment, activeVideo }) => {
   // form error catching state var used for className toggle
-  const [formErrClass, setFormErroClass] = useState("");
+  const [formErrClass, setFormErrorClass] = useState("");
   // form submit func that reads the form values into vars
   const formSubmit = (e) => {
     e.preventDefault();
-    const formInputLarge = e.target.commentSmall.value;
-    const formInputSmall = e.target.commentLarge.value;
     // if either of the inputs are empty throw an error and set state var to an error string // else set the state var to blank
-    if (!formInputSmall && !formInputLarge) {
-      setFormErroClass("--error");
+    if (!e.target.commentLarge.value && !e.target.commentSmall.value) {
+      setFormErrorClass("--error");
       alert("Please enter a comment before submitting");
-    } else if (formInputLarge) {
-      postComment(activeVideo.id, formInputLarge);
-      setFormErroClass("");
+    } else if (e.target.commentLarge.value) {
+      postComment(activeVideo.id, e.target.commentLarge.value);
+      setFormErrorClass("");
       e.target.reset();
-    } else if (formInputSmall) {
-      postComment(activeVideo.id, formInputSmall);
-      setFormErroClass("");
+    } else if (e.target.commentSmall.value) {
+      postComment(activeVideo.id, e.target.commentSmall.value);
+      setFormErrorClass("");
       e.target.reset();
     }
   };
@@ -50,7 +48,12 @@ const CommentsForm = ({ postComment, activeVideo }) => {
               name="commentSmall"
             ></input>
           </div>
-          <CtaButton text="Comment" source={buttonIcon} classModifier="false" />
+          <CtaButton
+            text="Comment"
+            type="submit"
+            source={buttonIcon}
+            classModifier="false"
+          />
         </form>
       </div>
     </div>

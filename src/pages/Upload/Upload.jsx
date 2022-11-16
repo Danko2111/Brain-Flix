@@ -3,6 +3,7 @@ import thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import CtaButton from "../../components/Button/CtaButton";
 import uploadIcon from "../../assets/Icons/publish.svg";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
 
 const Upload = ({ colorMode }) => {
@@ -12,7 +13,7 @@ const Upload = ({ colorMode }) => {
     axios
       .post(`http://localhost:5000/videos`, videoData)
       .then((res) => {
-        console.log("completed");
+        console.log("your video has been posted!");
       })
       .catch((err) => alert(err));
   };
@@ -23,11 +24,19 @@ const Upload = ({ colorMode }) => {
     nav("/");
   };
 
+  const [formErrClass, setFormErrorClass] = useState("");
+
   const uploadVideo = (e) => {
     e.preventDefault();
-    postVideo(e.target.uploadTitle.value, e.target.uploadDesc.value);
-    alert("Your video has been uploaded");
-    nav("/");
+    if (!e.target.uploadTitle.value || !e.target.uploadDesc.value) {
+      setFormErrorClass("--error");
+      alert("Please enter a title and description before submitting");
+    } else {
+      postVideo(e.target.uploadTitle.value, e.target.uploadDesc.value);
+      alert("Your video has been uploaded");
+      setFormErrorClass("");
+      nav("/");
+    }
   };
 
   return (
@@ -45,13 +54,13 @@ const Upload = ({ colorMode }) => {
         <div className="upload__form-inputarea">
           <label className="upload__form-label">title your video</label>
           <input
-            className="upload__form-input"
+            className={`upload__form-input upload__form-input${formErrClass}`}
             name="uploadTitle"
             placeholder="Add a title to your video"
           ></input>
           <label className="upload__form-label">add a video description</label>
           <textarea
-            className="upload__form-textarea"
+            className={`upload__form-textarea upload__form-textarea${formErrClass}`}
             name="uploadDesc"
             placeholder="Add a description to your video"
             rows="5"
@@ -60,6 +69,7 @@ const Upload = ({ colorMode }) => {
         <div className="upload__form-footer">
           <CtaButton
             text="cancel"
+            type="button"
             source={null}
             clickHandler={navigateToHome}
             classModifier="cancel-button"
