@@ -39,6 +39,7 @@
         height: 25px;
         padding: 0 3px;
         position: relative;
+        cursor: pointer;
         &dark {
             background-color: $BrainFlix-Black;
             border-radius: 50px;
@@ -47,6 +48,7 @@
             height: 25px;
             padding: 0 3px;
             position: relative;
+            cursor: pointer;
         }
         &--inner {
             width: 18px;

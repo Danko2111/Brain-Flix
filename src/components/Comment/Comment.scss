@@ -54,6 +54,7 @@
     &__delete-icon {
         width: 15px;
         height: 15px;
+        cursor: pointer;
     }
     &__like-button {
         margin-top: 1rem;
@@ -67,6 +68,7 @@
         width: 15px;
         height: 15px;
         margin-right: 0.5rem;
+        cursor: pointer;
         &:active {
             transform: scale(0.90);
         }

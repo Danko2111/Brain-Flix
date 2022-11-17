@@ -95,6 +95,7 @@
             background-color: white;
         }
         &-icon {
+            cursor: pointer;
             padding: 0;
             &:active {
                 transform: scale(0.90);
