@@ -7,6 +7,7 @@ const CommentSection = ({
   activeVideo,
   postComment,
   delComment,
+  likeComment,
   colorMode,
 }) => {
   return (
@@ -22,9 +23,11 @@ const CommentSection = ({
             name={comment.name}
             text={comment.comment}
             timestamp={comment.timestamp}
+            likes={comment.likes}
             dateParser={dateParser}
             delComment={delComment}
-            activeVideo={activeVideo.id}
+            likeComment={likeComment}
+            activeVideoId={activeVideo.id}
             colorMode={colorMode}
           />
         ))}

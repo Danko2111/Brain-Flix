@@ -37,10 +37,7 @@ const MainContent = ({ colorMode }) => {
   // Func to make an axios get call for the video list array and set it as the state var, also setting a default video details state var
   const getVideoList = () => {
     axios
-      .get(
-        // `https://project-2-api.herokuapp.com/videos?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`
-        "http://localhost:5000/videos"
-      )
+      .get("http://localhost:5000/videos")
       .then((res) => {
         setVideosArr(res.data);
         if (!id) {
@@ -52,10 +49,7 @@ const MainContent = ({ colorMode }) => {
   // Func to make an axios get call for the video details obj and set it as the state var // using the url params as the id in the api call.
   const getVideoDetails = (id) => {
     axios
-      .get(
-        // `https://project-2-api.herokuapp.com/videos/${id}?api_key=b7aa1069-7457-4ad5-927d-a2af1d03b5b6`
-        `http://localhost:5000/videos/${id}`
-      )
+      .get(`http://localhost:5000/videos/${id}`)
       .then((res) => {
         setActiveVideo(res.data);
       })
@@ -81,6 +75,27 @@ const MainContent = ({ colorMode }) => {
       .catch((err) => alert(err));
   };
 
+  const likeVideo = (vidId) => {
+    axios
+      .put(`http://localhost:5000/videos/${vidId}/likes`)
+      .then((res) => {
+        getVideoDetails(vidId);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+  const likeComment = (vidId, comId) => {
+    axios
+      .put(`http://localhost:5000/videos/${vidId}/comments/${comId}/likes`)
+      .then((res) => {
+        getVideoDetails(vidId);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
   return (
     // terniary operator to only mount components once an active video obj is set to the state var
     <>
@@ -90,11 +105,16 @@ const MainContent = ({ colorMode }) => {
             <VideoPlayer imgSrc={activeVideo} />
             <div className="main__lower">
               <div className="main__lower--left">
-                <VideoInfo activeVideo={activeVideo} colorMode={colorMode} />
+                <VideoInfo
+                  activeVideo={activeVideo}
+                  likeVideo={likeVideo}
+                  colorMode={colorMode}
+                />
                 <CommentSection
                   activeVideo={activeVideo}
                   postComment={postComment}
                   delComment={delComment}
+                  likeComment={likeComment}
                   colorMode={colorMode}
                 />
               </div>
