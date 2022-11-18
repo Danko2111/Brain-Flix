@@ -39,10 +39,14 @@
         margin-top: 0.5rem;
         color: $BrainFlix-Black;
     }
+    &__bottom {
+        display: flex;
+    }
     &__delete-button {
         margin-top: 1rem;
         background-color: white;
         border: none;
+        display: flex;
         &:active {
             transform: scale(0.90);
         }
@@ -50,5 +54,23 @@
     &__delete-icon {
         width: 15px;
         height: 15px;
+        cursor: pointer;
+    }
+    &__like-button {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        background-color: white;
+        border: none;
+        display: flex;
+        color: $BrainFlix-Black;
+    }
+    &__like-icon {
+        width: 15px;
+        height: 15px;
+        margin-right: 0.5rem;
+        cursor: pointer;
+        &:active {
+            transform: scale(0.90);
+        }
     }
 }

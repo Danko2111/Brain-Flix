@@ -3,8 +3,9 @@ import likesIcon from "../../assets/Icons/likes.svg";
 import "./VideoInfo.scss";
 import { dateParser } from "../../utilities/DateParser/DateParser";
 
-const VideoInfo = ({ colorMode, activeVideo }) => {
-  const { title, channel, views, timestamp, likes, description } = activeVideo;
+const VideoInfo = ({ colorMode, activeVideo, likeVideo }) => {
+  const { id, title, channel, views, timestamp, likes, description } =
+    activeVideo;
 
   return (
     <div className="video-info">
@@ -23,11 +24,16 @@ const VideoInfo = ({ colorMode, activeVideo }) => {
         </div>
         <p className="video-info__timestamp">{dateParser(timestamp)}</p>
         <div className="video-info__likes">
-          <img
-            className="video-info__likes-icon"
-            src={likesIcon}
-            alt="likes icon"
-          ></img>
+          <button
+            className={`video-info__likes-button ${colorMode}`}
+            onClick={() => likeVideo(id)}
+          >
+            <img
+              className="video-info__likes-icon"
+              src={likesIcon}
+              alt="likes icon"
+            ></img>
+          </button>
           <p className="video-info__likes-text">{likes}</p>
         </div>
       </div>

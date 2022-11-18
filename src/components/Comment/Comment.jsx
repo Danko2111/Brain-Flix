@@ -1,15 +1,18 @@
 import delIcon from "../../assets/Icons/delete-button.svg";
+import likeIcon from "../../assets/Icons/like-icon.svg";
 import "./Comment.scss";
 
 const Comment = ({
   id,
   name,
   text,
+  likes,
   timestamp,
   dateParser,
   delComment,
-  activeVideo,
+  activeVideoId,
   colorMode,
+  likeComment,
 }) => {
   return (
     <div className="comment">
@@ -25,13 +28,24 @@ const Comment = ({
         <div className="comment__bottom">
           <button
             className="comment__delete-button"
-            onClick={() => delComment(activeVideo, id)}
+            onClick={() => delComment(activeVideoId, id)}
           >
             <img
               src={delIcon}
               alt="delete icon"
               className="comment__delete-icon"
             ></img>
+          </button>
+          <button
+            className="comment__like-button"
+            onClick={() => likeComment(activeVideoId, id)}
+          >
+            <img
+              src={likeIcon}
+              alt="like icon"
+              className="comment__like-icon"
+            ></img>
+            {likes}
           </button>
         </div>
       </div>

@@ -49,7 +49,7 @@ const PageHeader = ({ colorMode, toggleColorMode }) => {
             alt="profile logo"
           ></img>
           <CtaButton
-            text="Upload"
+            text="upload"
             source={buttonIcon}
             clickHandler={navigateToUpload}
             classModifier="false"

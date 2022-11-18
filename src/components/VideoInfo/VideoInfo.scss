@@ -87,8 +87,19 @@
             width: fit-content;
             order: 4;
         }
-        &-icon {
+        &-button {
+            display: flex;
+            align-items: flex-end;
             margin-right: 0.5rem;
+            border: none;
+            background-color: white;
+        }
+        &-icon {
+            cursor: pointer;
+            padding: 0;
+            &:active {
+                transform: scale(0.90);
+            }
         }
     }
     &__desc {
@@ -98,4 +109,5 @@
 
 .dark {
     color: white;
+    background-color: $BrainFlix-Black;
 }
