@@ -22,7 +22,7 @@
         }
     }
     &--bottom {
-        margin: 0.5rem 0;
+        margin: 0.5rem 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -89,7 +89,6 @@
         background-color: $Alabaster;
         padding: 10px;
         height: 2.25rem;
-        min-width: 220px;
         max-width: 100%;
         @include tablet {
             order:1;

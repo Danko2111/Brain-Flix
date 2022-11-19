@@ -8,8 +8,11 @@ import axios from "axios";
 
 const Upload = ({ colorMode }) => {
   // post video func that creates an obj and posts it to the api server
-  const postVideo = (title, description) => {
-    const videoData = { title: title, description: description };
+  const postVideo = (title, description, image) => {
+    const videoData = new FormData();
+    videoData.append("title", title);
+    videoData.append("description", description);
+    videoData.append("image", image);
     axios
       .post(`http://localhost:5000/videos`, videoData)
       .then((res) => {
@@ -28,11 +31,16 @@ const Upload = ({ colorMode }) => {
 
   const uploadVideo = (e) => {
     e.preventDefault();
+    console.log(e.target.uploadImage.files[0]);
     if (!e.target.uploadTitle.value || !e.target.uploadDesc.value) {
       setFormErrorClass("--error");
       alert("Please enter a title and description before submitting");
     } else {
-      postVideo(e.target.uploadTitle.value, e.target.uploadDesc.value);
+      postVideo(
+        e.target.uploadTitle.value,
+        e.target.uploadDesc.value,
+        e.target.uploadImage.files[0]
+      );
       alert("Your video has been uploaded");
       setFormErrorClass("");
       nav("/");
@@ -42,7 +50,11 @@ const Upload = ({ colorMode }) => {
   return (
     <div className="upload">
       <h2 className="upload__title">Upload Video</h2>
-      <form className="upload__form" onSubmit={uploadVideo}>
+      <form
+        className="upload__form"
+        onSubmit={uploadVideo}
+        encType="multipart/form-data"
+      >
         <div className="upload__form-top">
           <label className="upload__form-label">video Thumbnail</label>
           <img
@@ -50,6 +62,11 @@ const Upload = ({ colorMode }) => {
             src={thumbnail}
             alt="a placeholder thumbnail"
           ></img>
+          <input
+            type="file"
+            name="uploadImage"
+            className="upload__form-fileupload"
+          ></input>
         </div>
         <div className="upload__form-inputarea">
           <label className="upload__form-label">title your video</label>
