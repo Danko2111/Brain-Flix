@@ -1,6 +1,113 @@
+@import "../../styles/Partials/variables";
+@import "../../styles/Partials/mixins";
+
 .video-player {
     width: 100%;
     aspect-ratio: 16/9;
-    background-color: black;
+    background-color: #000000;
     max-height: 80vh;
+    &__wrapper {
+        position: relative;
+    }
+    &__controls[data-state="hidden"] {
+        display: none;
+    }
+    &__controls[data-state="visible"]{
+        width: 100%;
+        height: 20px;
+        position: absolute;
+        bottom: 5px;
+        padding: 0 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background-color:$BrainFlix-Black;
+        @include tablet {
+            height: 40px;
+            padding: 0.5rem 1rem;
+        }
+    }
+    &__controls button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    &__playpause[data-state="play"]{
+        width: 10%;
+        height: 90%;
+        background-image: url(../../assets/Icons/play.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    &__playpause[data-state="pause"]{
+        width: 10%;
+        height: 90%;
+        background-image: url(../../assets/Icons/pause.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    &__progress-wrapper {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        width: 75%;
+        height: 100%;
+        margin-right: auto;
+    }
+    &__progress {
+        width: 90%;
+        height: 5px;
+        border: none;
+        color: #0095dd;
+        border-radius: 2px;
+    }
+    &__mute[data-state="muted"] {
+        width: 10%;
+        height: 90%;
+        background-image: url(../../assets/Icons/volume_off.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    &__mute[data-state="unmuted"] {
+        width: 10%;
+        height: 90%;
+        background-image: url(../../assets/Icons/volume_up.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    &__volup[data-state="volup"]{
+        width: 10%;
+        height: 90%;
+        background-image: url(../../assets/Icons/volume_up.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: contain;
+        color: white;
+        text-align: right;
+        margin-left: auto;
+    }
+    &__voldown[data-state="voldown"]{
+        width: 10%;
+        height: 90%;
+        background-image: url(../../assets/Icons/volume_up.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: contain;
+        color: white;
+        text-align: right;
+        margin-right: auto;
+    }
+    &__fs[data-state="go-fullscreen"]{
+        width: 10%;
+        height: 90%;
+        background-image: url(../../assets/Icons/fullscreen.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        color: white;
+    }
 }

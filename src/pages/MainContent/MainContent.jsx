@@ -102,7 +102,7 @@ const MainContent = ({ colorMode }) => {
       {activeVideo ? (
         <section className="main">
           <div className="main__wrapper">
-            <VideoPlayer imgSrc={activeVideo} />
+            <VideoPlayer activeVideo={activeVideo} />
             <div className="main__lower">
               <div className="main__lower--left">
                 <VideoInfo
