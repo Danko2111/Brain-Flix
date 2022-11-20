@@ -33,7 +33,7 @@
         cursor: pointer;
     }
     &__playpause[data-state="play"]{
-        width: 10%;
+        width: 15px;
         height: 90%;
         background-image: url(../../assets/Icons/play.svg);
         background-repeat: no-repeat;
@@ -41,7 +41,7 @@
         background-size: contain;
     }
     &__playpause[data-state="pause"]{
-        width: 10%;
+        width: 15px;
         height: 90%;
         background-image: url(../../assets/Icons/pause.svg);
         background-repeat: no-repeat;
@@ -54,60 +54,84 @@
         cursor: pointer;
         width: 75%;
         height: 100%;
-        margin-right: auto;
     }
     &__progress {
-        width: 90%;
+        width: 100%;
         height: 5px;
         border: none;
         color: #0095dd;
         border-radius: 2px;
     }
     &__mute[data-state="muted"] {
-        width: 10%;
+        width: 25px;
         height: 90%;
         background-image: url(../../assets/Icons/volume_off.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        @include tablet {
+            width: 35px;
+        }
     }
     &__mute[data-state="unmuted"] {
-        width: 10%;
+        width: 25px;
         height: 90%;
         background-image: url(../../assets/Icons/volume_up.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        @include tablet {
+            width: 35px;
+        }
     }
     &__volup[data-state="volup"]{
-        width: 10%;
+        width: 25px;
         height: 90%;
         background-image: url(../../assets/Icons/volume_up.svg);
         background-repeat: no-repeat;
+        background-size: 70%;
         background-position: left;
-        background-size: contain;
+        font-size: 0.75rem;
         color: white;
         text-align: right;
         margin-left: auto;
+        @include tablet {
+            background-size: contain;
+            width: 35px;
+        }
+        @include desktop{
+            font-size: 1rem;
+        }
     }
     &__voldown[data-state="voldown"]{
-        width: 10%;
+        width: 25px;
         height: 90%;
         background-image: url(../../assets/Icons/volume_up.svg);
         background-repeat: no-repeat;
         background-position: left;
-        background-size: contain;
+        background-size: 70%;
+        font-size: 0.75rem;
         color: white;
         text-align: right;
         margin-right: auto;
+        @include tablet {
+            background-size: contain;
+            width: 35px;
+        }
+        @include desktop{
+            font-size: 1rem;
+        }
     }
     &__fs[data-state="go-fullscreen"]{
-        width: 10%;
+        width: 25px;
         height: 90%;
         background-image: url(../../assets/Icons/fullscreen.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
         color: white;
+        @include tablet {
+            width: 35px;
+        }
     }
 }
