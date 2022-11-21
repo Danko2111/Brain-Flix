@@ -5,6 +5,7 @@ import uploadIcon from "../../assets/Icons/publish.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+const API_URL = "http://localhost:5000/videos";
 
 const Upload = ({ colorMode }) => {
   // post video func that creates an obj and posts it to the api server
@@ -14,7 +15,7 @@ const Upload = ({ colorMode }) => {
     videoData.append("description", description);
     videoData.append("image", image);
     axios
-      .post(`http://localhost:5000/videos`, videoData)
+      .post(API_URL, videoData)
       .then((res) => {
         console.log("your video has been posted!");
       })

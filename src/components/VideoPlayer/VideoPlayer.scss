@@ -21,115 +21,137 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        background-color:$BrainFlix-Black;
+        background-color:rgb(28, 28, 28);
         @include tablet {
             height: 40px;
             padding: 0.5rem 1rem;
         }
     }
-    &__controls button {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-    }
-    &__playpause[data-state="play"]{
+    &__play{
         width: 15px;
         height: 90%;
+        background-color: transparent;
         background-image: url(../../assets/Icons/play.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        border: none;
+        cursor: pointer;
     }
-    &__playpause[data-state="pause"]{
+    &__pause{
         width: 15px;
         height: 90%;
+        background-color: transparent;
         background-image: url(../../assets/Icons/pause.svg);
         background-repeat: no-repeat;
         background-position: center;
-        background-size: contain;
+        background-size: cover;
+        border: none;
+        cursor: pointer;
     }
     &__progress-wrapper {
         display: flex;
         align-items: center;
+        gap: 0.5rem;
         cursor: pointer;
-        width: 75%;
+        width: 100%;
         height: 100%;
     }
-    &__progress {
+    &__progress-bar {
         width: 100%;
         height: 5px;
         border: none;
         color: #0095dd;
         border-radius: 2px;
     }
-    &__mute[data-state="muted"] {
+    &__progress-time {
+        color: white;
+        white-space: nowrap;
+    }
+    &__muted {
         width: 25px;
         height: 90%;
+        background-color: transparent;
         background-image: url(../../assets/Icons/volume_off.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        border: none;
+        cursor: pointer;
         @include tablet {
             width: 35px;
         }
     }
-    &__mute[data-state="unmuted"] {
+    &__unmuted {
         width: 25px;
         height: 90%;
+        background-color: transparent;
         background-image: url(../../assets/Icons/volume_up.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        border: none;
+        cursor: pointer;
         @include tablet {
             width: 35px;
         }
     }
-    &__volup[data-state="volup"]{
+    &__volup {
         width: 25px;
         height: 90%;
+        background-color: transparent;
         background-image: url(../../assets/Icons/volume_up.svg);
         background-repeat: no-repeat;
         background-size: 70%;
         background-position: left;
-        font-size: 0.75rem;
+        font-size: 0.5rem;
         color: white;
         text-align: right;
         margin-left: auto;
+        border: none;
+        cursor: pointer;
         @include tablet {
             background-size: contain;
             width: 35px;
+            font-size: 0.75rem;
         }
         @include desktop{
             font-size: 1rem;
         }
     }
-    &__voldown[data-state="voldown"]{
+    &__voldown {
         width: 25px;
         height: 90%;
+        background-color: transparent;
         background-image: url(../../assets/Icons/volume_up.svg);
         background-repeat: no-repeat;
         background-position: left;
         background-size: 70%;
-        font-size: 0.75rem;
+        font-size: 0.5rem;
         color: white;
         text-align: right;
         margin-right: auto;
+        border: none;
+        cursor: pointer;
         @include tablet {
             background-size: contain;
             width: 35px;
+            font-size: 0.75rem;
         }
         @include desktop{
             font-size: 1rem;
         }
     }
-    &__fs[data-state="go-fullscreen"]{
+    &__fs{
         width: 25px;
         height: 90%;
+        background-color: transparent;
         background-image: url(../../assets/Icons/fullscreen.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        color: white;
+        border: none;
+        cursor: pointer;
         @include tablet {
             width: 35px;
         }

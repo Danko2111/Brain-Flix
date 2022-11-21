@@ -6,6 +6,7 @@ import "./MainContent.scss";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+const API_URL = "http://localhost:5000/videos";
 
 const MainContent = ({ colorMode }) => {
   const { id } = useParams();
@@ -37,7 +38,7 @@ const MainContent = ({ colorMode }) => {
   // Func to make an axios get call for the video list array and set it as the state var, also setting a default video details state var
   const getVideoList = () => {
     axios
-      .get("http://localhost:5000/videos")
+      .get(API_URL)
       .then((res) => {
         setVideosArr(res.data);
         if (!id) {
@@ -49,7 +50,7 @@ const MainContent = ({ colorMode }) => {
   // Func to make an axios get call for the video details obj and set it as the state var // using the url params as the id in the api call.
   const getVideoDetails = (id) => {
     axios
-      .get(`http://localhost:5000/videos/${id}`)
+      .get(`${API_URL}/${id}`)
       .then((res) => {
         setActiveVideo(res.data);
       })
@@ -59,7 +60,7 @@ const MainContent = ({ colorMode }) => {
   const postComment = (id, content) => {
     const commentData = { name: "Placeholder", comment: content };
     axios
-      .post(`http://localhost:5000/videos/${id}/comments`, commentData)
+      .post(`${API_URL}/${id}/comments`, commentData)
       .then((res) => {
         getVideoDetails(id);
       })
@@ -68,7 +69,7 @@ const MainContent = ({ colorMode }) => {
   // Func that makes an axios delete call and removes a comment from the api server
   const delComment = (vidId, comId) => {
     axios
-      .delete(`http://localhost:5000/videos/${vidId}/comments/${comId}`)
+      .delete(`${API_URL}/${vidId}/comments/${comId}`)
       .then(() => {
         getVideoDetails(vidId);
       })
@@ -77,7 +78,7 @@ const MainContent = ({ colorMode }) => {
 
   const likeVideo = (vidId) => {
     axios
-      .put(`http://localhost:5000/videos/${vidId}/likes`)
+      .put(`${API_URL}/${vidId}/likes`)
       .then((res) => {
         getVideoDetails(vidId);
       })
@@ -87,7 +88,7 @@ const MainContent = ({ colorMode }) => {
   };
   const likeComment = (vidId, comId) => {
     axios
-      .put(`http://localhost:5000/videos/${vidId}/comments/${comId}/likes`)
+      .put(`${API_URL}/${vidId}/comments/${comId}/likes`)
       .then((res) => {
         getVideoDetails(vidId);
       })
